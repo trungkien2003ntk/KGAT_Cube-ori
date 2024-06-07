@@ -123,10 +123,10 @@ def calc_metrics_at_k(cf_scores, train_user_dict, test_user_dict, user_ids, item
     for idx, u in enumerate(user_ids):
         train_pos_item_list = train_user_dict[u]
         test_pos_item_list = test_user_dict[u]
-        print(f"-----test_pos_item_list{test_pos_item_list}--------len{len(test_pos_item_list)}")
+        # print(f"-----test_pos_item_list{test_pos_item_list}--------len{len(test_pos_item_list)}")
         cf_scores[idx][train_pos_item_list] = -np.inf
         test_pos_item_binary[idx][test_pos_item_list] = 1
-        print(f"-----test_pos_item_binary{test_pos_item_binary}--------len{len(test_pos_item_binary)}")
+        # print(f"-----test_pos_item_binary{test_pos_item_binary}--------len{len(test_pos_item_binary)}")
 
     try:
         _, rank_indices = torch.sort(cf_scores.cuda(), descending=True)    # try to speed up the sorting process

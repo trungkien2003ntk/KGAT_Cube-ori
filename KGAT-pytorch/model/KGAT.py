@@ -205,7 +205,7 @@ class KGAT(nn.Module):
             v_chunk = torch.sum(r_mul_t_chunk * torch.tanh(r_mul_h_chunk + r_embed), dim=1)
             v_list.append(v_chunk)
         v_list = torch.cat(v_list)
-        print(v_list.shape)
+        # print(v_list.shape)
         return v_list
 
 
